@@ -23,6 +23,7 @@ $(function(){
 			alert("请上传apk文件");
 			return;
 		}
+		alert('准备上传');
 		$.ajax({
 			url:"http://120.25.69.229:7000/users/saveApp",
 			type:'post',
