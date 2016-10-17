@@ -24,7 +24,7 @@ $(function(){
 			return;
 		}
 		$.ajax({
-			url:"http://120.25.69.229:7000/saveApp",
+			url:"http://120.25.69.229:7000/users/saveApp",
 			type:'post',
 			dataType:"json",
 			data:{
