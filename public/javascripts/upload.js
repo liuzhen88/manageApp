@@ -36,6 +36,7 @@ $(function(){
 			},
 			success:function(data){
 				alert('上传成功');
+				apk = "";
 			}
 		})
 	});

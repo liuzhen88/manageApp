@@ -7,7 +7,7 @@ function saveApp(req, res, cb){
 	var msg = req.body.msg;
 	var source = req.body.apk;
 	var fileName = req.body.fileName;
-	var base64Data = value.replace(/^data:\/\w+;base64,/, "");
+	var base64Data = source.replace(/^data:\/\w+;base64,/, "");
 	var dataBuffer = new Buffer(base64Data, 'base64');	
 	fs.writeFile(fileName,'/',function(err){
 		if(err){
