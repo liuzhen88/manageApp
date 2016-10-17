@@ -38,7 +38,7 @@ function saveApp(req, res, cb){
 							}
 						})
 					}else{
-						var newArr = docs.concat(arr);
+						var newArr = data.concat(arr);
 						redisServer.set('app',JSON.stringify(newArr),function(err){
 							if(err){
 								console.log(err);
