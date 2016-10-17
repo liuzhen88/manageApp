@@ -17,7 +17,7 @@ function saveApp(req, res, cb){
 				versionCode:versionCode,
 				versionName:versionName,
 				msg:msg,
-				apk:'http://120.25.69.229/manageApp/'+fileName
+				apk:'http://120.25.69.229:9000/manageApp/'+fileName
 			};
 			var arr = [];
 			arr.push(obj);
