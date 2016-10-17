@@ -56,5 +56,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen('7000',function(){
+  console.log('server start at port 7000');
+});
 
 module.exports = app;
