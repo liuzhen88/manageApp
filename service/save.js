@@ -9,7 +9,7 @@ function saveApp(req, res, cb){
 	var fileName = req.body.fileName;
 	var base64Data = source.replace(/^data:\/\w+;base64,/, "");
 	var dataBuffer = new Buffer(base64Data, 'base64');	
-	fs.writeFile(fileName,'/',function(err){
+	fs.writeFile(fileName,dataBuffer,function(err){
 		if(err){
 			cb(err);
 		}else{
