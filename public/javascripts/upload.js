@@ -1,8 +1,9 @@
 $(function(){
 	var apk = "";
+	var fileName = "";
 	$("#upload").change(function(e){
 		var file = e.target.files[0];
-		var fileName = file.name;
+		fileName = file.name;
 		var reader = new FileReader();
 		reader.readAsDataURL(file);
 		reader.onload = function(e){
@@ -30,6 +31,7 @@ $(function(){
 				versionCode:versionCode,
 				versionName:versionName,
 				msg:msg,
+				fileName:fileName,
 				apk:apk
 			},
 			success:function(data){
