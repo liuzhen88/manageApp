@@ -55,6 +55,20 @@ function saveApp(req, res, cb){
 	})
 }
 
+function getUploadData(req, res, cb){
+	redisServer.get('app',function(err,docs){
+		if(err){
+			cb(err);
+		}else{
+			var data = {'code':'200','message':'ok'};
+			var result = JSON.parse(docs);
+			data.data = result;
+			cb(data);
+		}
+	});
+}
+
 module.exports = {
-	saveApp:saveApp
+	saveApp:saveApp,
+	getUploadData:getUploadData
 }

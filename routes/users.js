@@ -12,4 +12,10 @@ router.post('/saveApp',function(req,res){
 	});
 });
 
+router.get('/getUploadData',function(req,res){
+	service.getUploadData(req,res,function(data){
+		res.send(data);
+	});
+});
+
 module.exports = router;
