@@ -1,0 +1,17 @@
+extends layout
+block content
+	.code
+		span 版本号:
+		input(type='text' class='common-input' id="versionCode")
+	.version-name.common
+		span 版本名称:
+		input(type='text' class='common-input' id="versionName")
+	.msg.common
+		span 更新提示
+		input(type='text' class='common-input' id="msg")
+	.upload.common
+		span 上传:
+		input(type='file' class='common-input' id='upload')
+	#submit 提交
+block sub-js
+	script(src='/javascripts/gdzj.js')

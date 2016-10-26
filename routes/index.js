@@ -10,4 +10,8 @@ router.get('/upload',function(req,res){
 	res.render('./upload',{});
 });
 
+router.get('/gdzj',function(req,res){
+	res.render('./gdzj',{});
+});
+
 module.exports = router;
