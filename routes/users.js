@@ -25,4 +25,10 @@ router.get('/getUploadData',function(req,res){
 	});
 });
 
+router.get('/getUploadDataByGdzj',function(req,res){
+	gdzjService.getUploadData(req,res,function(data){
+		res.send(data);
+	});
+});
+
 module.exports = router;
