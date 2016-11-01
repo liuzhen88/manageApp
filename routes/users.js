@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var service = require('../service/save');
 var gdzjService = require('../service/gdzj');
+var kcService = require('../service/kcService');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -19,6 +20,12 @@ router.post('/saveGdzj',function(req,res){
 	});
 });
 
+router.post('/saveKc',function(req,res){
+	kcService.saveApp(req,res,function(data){
+		res.send(data);
+	});
+});
+
 router.get('/getUploadData',function(req,res){
 	service.getUploadData(req,res,function(data){
 		res.send(data);
@@ -27,6 +34,12 @@ router.get('/getUploadData',function(req,res){
 
 router.get('/getUploadDataByGdzj',function(req,res){
 	gdzjService.getUploadData(req,res,function(data){
+		res.send(data);
+	});
+});
+
+router.get('/getUploadDataByKc',function(req,res){
+	kcService.getUploadData(req,res,function(data){
 		res.send(data);
 	});
 });

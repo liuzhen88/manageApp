@@ -14,4 +14,8 @@ router.get('/gdzj',function(req,res){
 	res.render('./gdzj',{});
 });
 
+router.get('/kc',function(req,res){
+	res.render('./kc',{});
+});
+
 module.exports = router;
