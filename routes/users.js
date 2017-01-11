@@ -3,6 +3,7 @@ var router = express.Router();
 var service = require('../service/save');
 var gdzjService = require('../service/gdzj');
 var kcService = require('../service/kcService');
+var znkbService = require('../service/znkbService');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -26,6 +27,12 @@ router.post('/saveKc',function(req,res){
 	});
 });
 
+router.post('/saveZnkb',function(req,res){
+	znkbService.saveApp(req,res,function(data){
+		res.send(data);
+	});
+});
+
 router.get('/getUploadData',function(req,res){
 	service.getUploadData(req,res,function(data){
 		res.send(data);
@@ -40,6 +47,12 @@ router.get('/getUploadDataByGdzj',function(req,res){
 
 router.get('/getUploadDataByKc',function(req,res){
 	kcService.getUploadData(req,res,function(data){
+		res.send(data);
+	});
+});
+
+router.get('/getUploadDataByZnkb',function(req,res){
+	znkbService.getUploadData(req,res,function(data){
 		res.send(data);
 	});
 });

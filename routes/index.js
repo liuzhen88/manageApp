@@ -18,4 +18,8 @@ router.get('/kc',function(req,res){
 	res.render('./kc',{});
 });
 
+router.get('/znkb',function(req,res){
+	res.render('./znkb',{});
+});
+
 module.exports = router;
