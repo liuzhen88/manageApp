@@ -42,4 +42,22 @@ $(function(){
 			}
 		})
 	});
+	$.ajax({
+		url:'http://120.25.69.229:7000/users/getUploadDataByZnkb',
+		type:'get',
+		dataType:'json',
+		success:function(data){
+			if(data.data && data.data.length>0){
+				data.data.forEach(function(value,index){
+					var list ="<tr>"
+						+	"<th>"+value.versionCode+"</th>"
+						+	"<th>"+value.versionName+"</th>"
+						+	"<th>"+value.msg+"</th>"
+						+	"<th>"+value.apk+"</th>"
+						"</tr>";
+					$("#table").append(list);
+				});
+			}
+		}
+	});
 });
